@@ -21,10 +21,21 @@
   <img src="https://source.unsplash.com/7bwQXzbF6KE/800x500">
 
   <style>
+    :root {
+      --base: #ffc600;
+      --spacing: 10px;
+      --blur: 10px;
+    }
 
-    /*
-      misc styles, nothing to do with CSS variables
-    */
+    img {
+      padding: var(--spacing);
+      background: var(--base);
+      filter: blur(var(--blur));
+    }
+
+    .hl {
+      color: var(--base);
+    }
 
     body {
       text-align: center;
@@ -45,6 +56,21 @@
   </style>
 
   <script>
+    ;(function(){
+      
+      const inputs  = document.querySelectorAll('.controls input');
+      const docRoot = document.querySelector(':root');
+      
+      function styleUpdate(){
+        docRoot.style.setProperty(`--${this.name}`, this.value + (this.dataset.sizing || ''))
+      }
+
+      inputs.forEach(input=>{
+        input.addEventListener('change', styleUpdate);
+        input.addEventListener('mousemove', styleUpdate);
+      });
+
+    })()
   </script>
 
 </body>
