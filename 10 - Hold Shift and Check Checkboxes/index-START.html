@@ -96,6 +96,35 @@
   </div>
 
 <script>
+;(function(){
+
+  const checkboxes = Array.from(document.querySelectorAll('.inbox input[type="checkbox"]'))
+  let lastChecked = null;
+  let currentCheck = null;
+  let autoChecked = [];
+  
+  function clickHandler(e) {
+    if (this.checked ) {
+      if (e.shiftKey && lastChecked !== null) {
+        currentCheck = checkboxes.indexOf(this)
+        autoChecked = checkboxes.slice(
+          Math.min(currentCheck,lastChecked),
+          Math.max(currentCheck,lastChecked)
+        )
+        autoChecked.forEach(checkbox =>(checkbox.checked = true))
+      }
+      lastChecked = checkboxes.indexOf(this)
+    }
+    else {
+      lastChecked = null;
+    }
+  }
+
+  checkboxes.forEach(checkbox => {
+    checkbox.addEventListener("click", clickHandler)
+  })
+
+})()
 </script>
 </body>
 </html>

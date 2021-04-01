@@ -18,6 +18,7 @@
 ## [Day 07](https://eudora-hsj.github.io/javascript30/07%20-%20Array%20Cardio%20Day%202/index-START.html)
 ## [Day 08](https://eudora-hsj.github.io/javascript30/08%20-%20Fun%20with%20HTML5%20Canvas/index-START.html)
 ## [Day 09](https://eudora-hsj.github.io/javascript30/09%20-%20Dev%20Tools%20Domination/index-START.html)
+## [Day 10](https://eudora-hsj.github.io/javascript30/10%20-%20Hold%20Shift%20and%20Check%20Checkboxes/index-START.html)
 
 ...
 
