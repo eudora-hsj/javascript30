@@ -3,10 +3,29 @@
 <head>
   <meta charset="UTF-8">
   <title>Key Detection</title>
+  <p style="margin:40px auto; text-align: center; color: #555;">
+    輸入 keywords: 'Eudora'
+  </p>
   <script type="text/javascript" src="https://www.cornify.com/js/cornify.js"></script>
 </head>
 <body>
 <script>
+
+const pressed = [];
+const keywordsCode = [69, 85, 68, 79, 82, 65];  // keyword = eudora 不分大小寫 
+const keywordsLength = keywordsCode.length; 
+
+window.addEventListener('keyup', (e) => {
+  pressed.push(e.keyCode);
+  pressed.splice(-keywordsLength - 1, pressed.length - keywordsLength )
+  if (pressed.join('') === keywordsCode.join('')){
+    console.log('DING DING!');
+    cornify_add();
+  }
+  // console.log(`last keyin: ${pressed}`)
+  // console.log(`(-keywords: ${keywordsCode})`)
+});
+
 </script>
 </body>
 </html>

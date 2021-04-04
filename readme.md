@@ -20,6 +20,7 @@
 ## [Day 09](https://eudora-hsj.github.io/javascript30/09%20-%20Dev%20Tools%20Domination/index-START.html)
 ## [Day 10](https://eudora-hsj.github.io/javascript30/10%20-%20Hold%20Shift%20and%20Check%20Checkboxes/index-START.html)
 ## [Day 11](https://eudora-hsj.github.io/javascript30/11%20-%20Custom%20Video%20Player/index.html)
+## [Day 12](https://eudora-hsj.github.io/javascript30/12%20-%20Key%20Sequence%20Detection/index-START.html)
 
 ...
 
