@@ -43,6 +43,8 @@
   </div>
 
   <script>
+  ;(function(){
+
     function debounce(func, wait = 20, immediate = true) {
       var timeout;
       return function() {
@@ -58,6 +60,25 @@
       };
     }
 
+    const postImgs = document.querySelectorAll('.site-wrap img');
+
+    function srcollHandler() {
+      let windowTop = window.scrollY;
+      let windowBottom = windowTop + window.innerHeight;
+      postImgs.forEach(postImg => {
+        let imgCenterY = postImg.offsetTop + postImg.height / 2;
+        if (imgCenterY < windowBottom && imgCenterY > windowTop) {
+          postImg.classList.add('active');
+        } else {
+          postImg.classList.remove('active')
+        }
+      });
+    }
+
+    window.addEventListener('scroll', debounce(srcollHandler))
+    // window.addEventListener('scroll', srcollHandler)   // no debounce
+
+  })()
   </script>
 
   <style>
