@@ -22,6 +22,7 @@
 ## [Day 11](https://eudora-hsj.github.io/javascript30/11%20-%20Custom%20Video%20Player/index.html)
 ## [Day 12](https://eudora-hsj.github.io/javascript30/12%20-%20Key%20Sequence%20Detection/index-START.html)
 ## [Day 13](https://eudora-hsj.github.io/javascript30/13%20-%20Slide%20in%20on%20Scroll/index-START.html)
+## [Day 14](https://eudora-hsj.github.io/javascript30/14%20-%20JavaScript%20References%20VS%20Copying/index-START.html)
 
 ...
 

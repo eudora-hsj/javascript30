@@ -13,9 +13,12 @@
     const players = ['Wes', 'Sarah', 'Ryan', 'Poppy'];
 
     // and we want to make a copy of it.
+    const team1 = players;
 
     // You might think we can just do something like this:
+    team1[0] = 'Eudora'
 
+    console.log(players, team1)
     // however what happens when we update that array?
 
     // now here is the problem!
@@ -25,13 +28,28 @@
     // Why? It's because that is an array reference, not an array copy. They both point to the same array!
 
     // So, how do we fix this? We take a copy instead!
+    const team2 = players.slice();
+    team2[0] = 'Betty'
+
+    console.log(players, team2)
 
     // one way
 
     // or create a new array and concat the old one in
+    const team3 = [].concat(players)
+    team3[0] = 'Claire'
 
+    console.log(players, team3)
     // or use the new ES6 Spread
+    const team4 = [...players]
+    team4[0] = 'Dora'
 
+    console.log(players, team4)
+
+    const team5 = Array.from(players)
+    team5[0] = 'Eason'
+    
+    console.log(players, team5)
     // now when we update it, the original one isn't changed
 
     // The same thing goes for objects, let's say we have a person object
@@ -43,12 +61,46 @@
     };
 
     // and think we make a copy:
+    const someone = person;
+    someone.number = 99
+
+    console.log(person, someone)
 
     // how do we take a copy instead?
+    const someone2 = Object.assign({}, person, {number: 99, age: 12})
+
+    console.log(person, someone2)
 
     // We will hopefully soon see the object ...spread
+    const someone3 = {...person}
+    someone3.age = 50
+
+    console.log(person, someone3)
 
     // Things to note - this is only 1 level deep - both for Arrays and Objects. lodash has a cloneDeep method, but you should think twice before using it.
+
+    const wes = {
+      name: 'Wes',
+      age: 100,
+      social: {
+        twitter: '@wesbos',
+        facebook: 'wesbos.developer'
+      }
+    };
+
+    console.log('====');
+    console.log(wes);
+
+    const dev = Object.assign({}, wes);
+    dev.age="10"                   // 不會改到wes
+    dev.social.twitter="@eudora"   // 會改到wes!!
+
+    const dev2 = JSON.parse(JSON.stringify(wes));
+    dev2.age="20"
+    dev2.social.twitter="@dora"   // 不會改到wes
+
+    console.log(dev);
+    console.log(dev2);
 
   </script>
 
