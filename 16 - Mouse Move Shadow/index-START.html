@@ -35,6 +35,35 @@
   </style>
 
 <script>
+;(function(){
+  const hero = document.querySelector('.hero');
+  const text = hero.querySelector('h1');
+  const move = 500; 
+
+  function shadow(e) {
+    const { offsetWidth, offsetHeight } = hero;
+    let { offsetX, offsetY, target, currentTarget } = e;
+
+    if (currentTarget !== target) {
+      offsetX += target.offsetLeft;
+      offsetY += target.offsetTop;
+    }
+
+    const moveX = Math.round((offsetX / offsetWidth * move) - (move / 2));
+    const moveY = Math.round((offsetY / offsetHeight * move) - (move / 2));
+
+    text.style.textShadow = `
+      ${moveX}px ${moveY}px 0 rgba(255,0,255,0.7),
+      ${moveX * -1}px ${moveY}px 0 rgba(0,255,255,0.7),
+      ${moveY}px ${moveX * -1}px 0 rgba(0,255,0,0.7),
+      ${moveY * -1}px ${moveX}px 0 rgba(0,0,255,0.7)
+    `;
+
+  }
+
+  hero.addEventListener('mousemove', shadow);
+
+})()
 </script>
 </body>
 </html>
