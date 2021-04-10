@@ -25,7 +25,8 @@
 ## [Day 14](https://eudora-hsj.github.io/javascript30/14%20-%20JavaScript%20References%20VS%20Copying/index-START.html)
 ## [Day 15](https://eudora-hsj.github.io/javascript30/15%20-%20LocalStorage/index-START.html)
 ## [Day 16](https://eudora-hsj.github.io/javascript30/16%20-%20Mouse%20Move%20Shadow/index-START.html)
-## [Day 17](https://eudora-hsj.github.io/javascript30/17%20-%20Sort%20Without%20Articles/index-FINISHED.html)
+## [Day 17](https://eudora-hsj.github.io/javascript30/17%20-%20Sort%20Without%20Articles/index-START.html)
+## [Day 18](https://eudora-hsj.github.io/javascript30/18%20-%20Adding%20Up%20Times%20with%20Reduce/index-START.html)
 
 ...
 

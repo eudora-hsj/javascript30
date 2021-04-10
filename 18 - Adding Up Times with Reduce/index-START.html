@@ -5,6 +5,7 @@
   <title>Videos</title>
 </head>
 <body>
+  <p class="result" style="color: blue"></p>
   <ul class="videos">
     <li data-time="5:43">
       Video 1
@@ -182,6 +183,26 @@
     </li>
   </ul>
 <script>
+  ;(function(){
+    const lis = [...document.querySelectorAll('.videos li')]
+    const secSum = lis.map(li => {
+                        let [min, sec] = li.dataset.time.split(':')
+                        return sec * 1 + min * 60 
+                      })
+                      .reduce((sumSec, sec) =>
+                        sumSec + sec ,0
+                      )
+    const hours = Math.floor(secSum / 3600)
+    const mins  = Math.floor((secSum % 3600) / 60)
+    const secs  = (secSum % 3600) % 60
+    const result = `Total(H/M/S): ${hours}:${mins}:${secs}`
+
+    // show info
+    lis.forEach(li=>{
+      li.innerHTML+=`(time:${li.dataset.time})`
+    })
+    document.querySelector('.result').innerHTML = result
+  })()
 </script>
 </body>
 </html>
